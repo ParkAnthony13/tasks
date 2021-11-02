@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navBar {
+    background-color: #f5c462;
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin: 0px 50px;
+
+    font-family: 'Rubik', sans-serif;
+}
+#booklogo {
+    position: relative;
+    left: -30px;
+    top: 5px;
+}
+.navBarRight {
+    display:flex;
+}
+.navBarRightItems {
+    color: black;
+    opacity: 0.8;
+    margin: 0px 15px;
+}

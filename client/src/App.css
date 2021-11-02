@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
-
+.webContainer {
+  background-color: #f5c462;
+}
+.AppContainer {
+  margin: 0;
+  line-height: 65px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

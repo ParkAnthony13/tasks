@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="AppContainer">
       <NavBar/>
       <Router>
         <LandingPage path="/"/>
