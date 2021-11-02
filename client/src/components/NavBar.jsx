@@ -9,7 +9,24 @@ import '../App.css';
 const NavBar = props => {
 
     const [mobile,setMobile] = useState(false);
-    
+    const [mobileMenu,setMobileMenu] = useState(false);
+
+    const showButton = () => {
+        if (window.innerWidth <= 850) {
+            setMobile(true);
+        } else {
+            setMobile(false);
+        }
+    }
+    const showMobileMenu = () => {
+
+    }
+    const handleClick = e => {
+        setMobileMenu(!mobileMenu);
+        console.log(mobileMenu);
+    }
+
+    window.addEventListener('resize',showButton);
 
 
     return (
@@ -20,13 +37,14 @@ const NavBar = props => {
                 </div>
                 {mobile
                 ? <div>
-
+                    <img id="mobileMenu"src="./imgs/three-bars-icon-small.jpg" alt="mobileMenu" height="40px"/>
                 </div>
 
                 : <div className="navBarRight">
                     <h3 className="navBarRightItems">Home</h3>
                     <h3 className="navBarRightItems">Projects</h3>
                     <h3 className="navBarRightItems">Contact</h3>
+                    <img id="mobileMenu"src="./imgs/three-bars-icon-small.jpg" alt="mobileMenu" height="40px" onClick={handleClick}/>
                 </div>
                 }
             </div>
