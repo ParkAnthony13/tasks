@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import '../css/LandingPage.css';
 
+
 const LandingPage = props => {
 
     const handleClick = e => {
@@ -14,7 +15,10 @@ const LandingPage = props => {
 
     return (
         <div className="container">
-            <h1>LandPage</h1>
+            <div>
+                <h1 className="imgText">Track Tasks</h1>
+                <h1 className="imgText">Follow Your Progress</h1>
+            </div>
             <button onClick={handleClick}>Test</button>
         </div>
     )
