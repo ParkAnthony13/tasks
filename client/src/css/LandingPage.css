@@ -1,6 +1,6 @@
 .container {
     background-color: black;
-    color: white;
+    color: #1f1f1f;
     opacity: 0.9;
     height: 90.8vh;
     background-image: url('../img/mapChart.jpg');
@@ -14,5 +14,13 @@
     position: relative;
     top: 50px;
     left: 100px;
+    max-width: fit-content;
+}
+.imgTextMobile {
+    padding: 20px;
+    font-size: 40px;
+    position: relative;
+    top: 70px;
+    left: 20px;
     max-width: fit-content;
 }

@@ -39,7 +39,6 @@ const NavBar = props => {
                 ? <div>
                     <img id="mobileMenu"src="./imgs/three-bars-icon-small.jpg" alt="mobileMenu" height="40px"/>
                 </div>
-
                 : <div className="navBarRight">
                     <Link to="/" className="navBarRightItems">Home</Link>
                     <Link to="/projects" className="navBarRightItems">Projects</Link>

@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import LandingPage from './components/LandingPage'
 import NavBar from './components/NavBar'
+import ProjectList from './components/ProjectList'
 
 
 import './App.css';
@@ -15,6 +16,7 @@ function App() {
       <NavBar/>
       <Router>
         <LandingPage path="/"/>
+        <ProjectList path="/projects"/>
       </Router>
     </div>
   );
