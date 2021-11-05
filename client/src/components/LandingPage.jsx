@@ -8,7 +8,8 @@ import '../css/LandingPage.css';
 
 const LandingPage = props => {
 
-    const [mobile,setMobile] = useState(false);
+    const {mobile,setMobile} = props;
+    // const [mobile,setMobile] = useState(false);
     const handleClick = e => {
         console.log(window.innerWidth);
         console.log(mobile);

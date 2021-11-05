@@ -1,5 +1,70 @@
 .projectListContainer {
     background-color: #1f1f1f;
-    color: #939196;
+    color: #1f1f1f;
+    padding: 5px;
+    height: 100%;
+}
+.projectListContainer h1:first-child {
+    color: #f5c462;
 }
 
+.ProjectList {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: auto;
+}
+.ProjectCard {
+    background: #ffffff;
+    width: 320px;
+    margin: 0px 18px 18px;
+    text-decoration: none;
+    color: #1f1f1f;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    
+    outline: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 0px 3px 7px #ffffff;
+}
+.ProjectCardHover {
+    background: #ffffff;
+    width: 320px;
+    max-height: 400px;
+    margin: 0px 18px 18px;
+    text-decoration: none;
+    color: #1f1f1f;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    
+    outline: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 0px 3px 7px #ffffff;
+}
+.PCardItem {
+    margin: auto;
+}
+.PCHead {
+    max-width: 300px;
+}
+.PCImg {
+    height: 200px;
+    width: 200px;
+    outline: 2px solid black;
+    margin: 10px;
+}
+.PCardItem p {
+    text-align: start;
+}
+.PCardItem p:nth-child(2) {
+    margin-top:-30px;
+    margin-bottom: 10px;
+}

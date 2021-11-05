@@ -4,12 +4,12 @@ import {navigate, Router, Link} from '@reach/router'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import '../css/NavBar.css';
-import '../App.css';
 
 const NavBar = props => {
-
-    const [mobile,setMobile] = useState(false);
-    const [mobileMenu,setMobileMenu] = useState(false);
+    const {mobile,setMobile} = props;
+    const {mobileMenu,setMobileMenu} = props;
+    // const [mobile,setMobile] = useState(false);
+    // const [mobileMenu,setMobileMenu] = useState(false);
 
     const showButton = () => {
         if (window.innerWidth <= 850) {
@@ -18,8 +18,9 @@ const NavBar = props => {
             setMobile(false);
         }
     }
-    const showMobileMenu = () => {
-
+    const mobileMenuLink = () => {
+        setMobileMenu(false);
+        setMobile(true);
     }
     const handleClick = e => {
         setMobileMenu(!mobileMenu);
@@ -37,15 +38,27 @@ const NavBar = props => {
                 </div>
                 {mobile
                 ? <div>
-                    <img id="mobileMenu"src="./imgs/three-bars-icon-small.jpg" alt="mobileMenu" height="40px"/>
+                    <img onClick={handleClick} id="mobileMenu"src={mobileMenu ?"./imgs/x.png": "./imgs/three-bars-icon-small.jpg"} alt="mobileMenu" height="40px"/>
                 </div>
                 : <div className="navBarRight">
                     <Link to="/" className="navBarRightItems">Home</Link>
                     <Link to="/projects" className="navBarRightItems">Projects</Link>
                     <Link to="/contact" className="navBarRightItems">Contact</Link>
-                    <img id="mobileMenu"src="./imgs/three-bars-icon-small.jpg" alt="mobileMenu" height="40px" onClick={handleClick}/>
                 </div>
                 }
+            </div>
+            <div className={mobileMenu ? "NavMobileTrue outer" : "NavMobileFalse"}>
+                <Link to="/" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
+                    <p className="NavMobBtn">Home</p>
+                </Link>
+                <hr />
+                <Link to="/projects" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
+                    <p className="NavMobBtn">Projects</p>
+                </Link>
+                <hr />
+                <Link to="/contact" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
+                    <p className="NavMobBtn">Contact</p>
+                </Link>
             </div>
         </div>
     )

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {navigate, Router, Link} from '@reach/router'
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import SingleProject from './SingleProject';
 import '../css/ProjectList.css';
-import '../App.css';
 
 const ProjectList = props => {
 
@@ -30,12 +30,60 @@ const ProjectList = props => {
         <div className="projectListContainer">
             <h1>Projects</h1>
             <hr style={{margin:'10px 0px'}}></hr>
-            <div>
-                <div style={{padding:'20px',outline: '2px solid black',maxWidth:'160px'}}>
-                    <h2 style={{maxWidth: '150px'}}>Project Name</h2>
-                    <div style={{height: '100px', width: '100px', outline: '2px solid black', margin: '10px'}}></div>
-                    <p>short description of the project</p>
-                </div>
+            <div className="ProjectList">
+                <Link to="/projects/1" className="ProjectCard">
+                    <h2 className="PCardItem PCHead">Project Name</h2>
+                    <div className="PCardItem PCImg"></div>
+                    <div className="PCardItem">
+                        <p>Description</p>
+                        <p>short description of the project</p>
+                    </div>
+                </Link>
+
+                <Link to="/projects/2" className="ProjectCard">
+                    <h2 className="PCardItem PCHead">Project Name</h2>
+                    <div className="PCardItem PCImg"></div>
+                    <div className="PCardItem">
+                        <p>Description</p>
+                        <p>short description of the project</p>
+                    </div>
+                </Link>
+
+                <Link to="/projects/3" className="ProjectCard">
+                    <h2 className="PCardItem PCHead">Project Name</h2>
+                    <div className="PCardItem PCImg"></div>
+                    <div className="PCardItem">
+                        <p>Description</p>
+                        <p>short description of the project</p>
+                    </div>
+                </Link>
+
+                <Link to="/projects/4" className="ProjectCard">
+                    <h2 className="PCardItem PCHead">Project Name</h2>
+                    <div className="PCardItem PCImg"></div>
+                    <div className="PCardItem">
+                        <p>Description</p>
+                        <p>short description of the project</p>
+                    </div>
+                </Link>
+
+                <Link to="/projects/5" className="ProjectCard">
+                    <h2 className="PCardItem PCHead">Project Name</h2>
+                    <div className="PCardItem PCImg"></div>
+                    <div className="PCardItem">
+                        <p>Description</p>
+                        <p>short description of the project</p>
+                    </div>
+                </Link>
+
+                <Link to="/projects/6" className="ProjectCard">
+                    <h2 className="PCardItem PCHead">Project Name</h2>
+                    <div className="PCardItem PCImg"></div>
+                    <div className="PCardItem">
+                        <p>Description</p>
+                        <p>short description of the project</p>
+                    </div>
+                </Link>
             </div>
         </div>
     )
