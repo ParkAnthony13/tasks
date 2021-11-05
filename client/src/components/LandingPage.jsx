@@ -16,13 +16,13 @@ const LandingPage = props => {
     }
 
     const showButton = () => {
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1066) {
             setMobile(true);
         } else {
             setMobile(false);
         }
     }
-    window.addEventListener('resize',showButton);
+    // window.addEventListener('resize',showButton);
 
     return (
         <div className="container">

@@ -27,7 +27,7 @@ const NavBar = props => {
         console.log(mobileMenu);
     }
 
-    window.addEventListener('resize',showButton);
+    // window.addEventListener('resize',showButton);
 
 
     return (
@@ -42,7 +42,7 @@ const NavBar = props => {
                 </div>
                 : <div className="navBarRight">
                     <Link to="/" className="navBarRightItems">Home</Link>
-                    <Link to="/projects" className="navBarRightItems">Projects</Link>
+                    <Link to="/project" className="navBarRightItems">Projects</Link>
                     <Link to="/contact" className="navBarRightItems">Contact</Link>
                 </div>
                 }
@@ -52,7 +52,7 @@ const NavBar = props => {
                     <p className="NavMobBtn">Home</p>
                 </Link>
                 <hr />
-                <Link to="/projects" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
+                <Link to="/project" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
                     <p className="NavMobBtn">Projects</p>
                 </Link>
                 <hr />

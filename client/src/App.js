@@ -16,7 +16,15 @@ function App() {
 
   const [mobile,setMobile] = useState(false);
   const [mobileMenu,setMobileMenu] = useState(false);
+  const showButton = () => {
+    if (window.innerWidth <= 850) {
+        setMobile(true);
+    } else {
+        setMobile(false);
+    }
+  }
 
+  window.addEventListener('resize',showButton);
 
 
   return (
@@ -32,9 +40,11 @@ function App() {
           mobile={mobile} 
           setMobile={setMobile}
         />
-        <ProjectList path="/projects">
-          <SingleProject path="/projects/1"/>
-        </ProjectList>
+        <ProjectList path="/project"
+          mobile={mobile} 
+          setMobile={setMobile}
+        />
+        <SingleProject path="/project/:id"/>
         <NavMobile path="/test" />
       </Router>
     </div>

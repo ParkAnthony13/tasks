@@ -7,8 +7,9 @@ import '../css/ProjectList.css';
 
 const ProjectList = props => {
 
-    const [mobile,setMobile] = useState(false);
-    const [mobileMenu,setMobileMenu] = useState(false);
+    const {mobile,setMobile} = props;
+    // const [mobile,setMobile] = useState(false);
+    // const [mobileMenu,setMobileMenu] = useState(false);
 
     const showButton = () => {
         if (window.innerWidth <= 850) {
@@ -18,12 +19,7 @@ const ProjectList = props => {
         }
     }
 
-    const handleClick = e => {
-        setMobileMenu(!mobileMenu);
-        console.log(mobileMenu);
-    }
-
-    window.addEventListener('resize',showButton);
+    // window.addEventListener('resize',showButton);
 
 
     return (
@@ -31,7 +27,7 @@ const ProjectList = props => {
             <h1>Projects</h1>
             <hr style={{margin:'10px 0px'}}></hr>
             <div className="ProjectList">
-                <Link to="/projects/1" className="ProjectCard">
+                <Link to="/project/1" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
                     <div className="PCardItem PCImg"></div>
                     <div className="PCardItem">
@@ -40,7 +36,7 @@ const ProjectList = props => {
                     </div>
                 </Link>
 
-                <Link to="/projects/2" className="ProjectCard">
+                <Link to="/project/2" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
                     <div className="PCardItem PCImg"></div>
                     <div className="PCardItem">
@@ -49,7 +45,7 @@ const ProjectList = props => {
                     </div>
                 </Link>
 
-                <Link to="/projects/3" className="ProjectCard">
+                <Link to="/project/3" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
                     <div className="PCardItem PCImg"></div>
                     <div className="PCardItem">
@@ -58,7 +54,7 @@ const ProjectList = props => {
                     </div>
                 </Link>
 
-                <Link to="/projects/4" className="ProjectCard">
+                <Link to="/project/4" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
                     <div className="PCardItem PCImg"></div>
                     <div className="PCardItem">
@@ -67,7 +63,7 @@ const ProjectList = props => {
                     </div>
                 </Link>
 
-                <Link to="/projects/5" className="ProjectCard">
+                <Link to="/project/5" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
                     <div className="PCardItem PCImg"></div>
                     <div className="PCardItem">
@@ -76,7 +72,7 @@ const ProjectList = props => {
                     </div>
                 </Link>
 
-                <Link to="/projects/6" className="ProjectCard">
+                <Link to="/project/6" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
                     <div className="PCardItem PCImg"></div>
                     <div className="PCardItem">
