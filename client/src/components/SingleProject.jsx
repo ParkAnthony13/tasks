@@ -6,6 +6,8 @@ import '../css/ProjectList.css';
 
 const SingleProject = props => {
 
+    const {id} =props
+    
 
     return (
         <div>
