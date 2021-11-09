@@ -13,6 +13,7 @@
 .AppContainer {
   margin: 0;
   line-height: 65px;
+  background-color: #1f1f1f;
 }
 .App-logo {
   height: 40vmin;

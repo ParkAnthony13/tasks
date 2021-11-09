@@ -12,6 +12,8 @@ import SingleProject from './components/SingleProject';
 
 import './App.css';
 
+document.body.style.backgroundColor = "#1f1f1f";
+
 function App() {
 
   const [mobile,setMobile] = useState(false);
