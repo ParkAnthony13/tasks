@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {navigate, Router, Link} from '@reach/router'
-import Button from '@mui/material/Button';
-import axios from 'axios';
-import SingleProject from './SingleProject';
 import '../css/ProjectList.css';
 
 const ProjectList = props => {

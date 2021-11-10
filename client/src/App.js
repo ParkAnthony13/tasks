@@ -1,12 +1,11 @@
-import react, { useState, useEffect } from 'react';
-import { Link, Navigate, Router } from '@reach/router';
-import Button from '@mui/material/Button';
-import axios from 'axios';
+import react, { useState } from 'react';
+import { Router } from '@reach/router';
+// import Button from '@mui/material/Button';
+// import axios from 'axios';
 
 import LandingPage from './components/LandingPage';
 import NavBar from './components/NavBar';
 import ProjectList from './components/ProjectList';
-import NavMobile from './components/NavMobile';
 import SingleProject from './components/SingleProject';
 
 
@@ -46,8 +45,9 @@ function App() {
           mobile={mobile} 
           setMobile={setMobile}
         />
-        <SingleProject path="/project/:id"/>
-        <NavMobile path="/test" />
+        <SingleProject path="/project/:id"
+          mobile={mobile} 
+          setMobile={setMobile}/>
       </Router>
     </div>
   );
