@@ -3,8 +3,11 @@ import {navigate, Router, Link} from '@reach/router'
 import '../css/SingleProject.css';
 
 const SingleProject = props => {
-
-    const {id} =props
+    const [testList,setTestList] = useState([1,2,3,4,5]);
+    const [toggle,setToggle] = useState(true);
+    const [inputToggle,setInputToggle] = useState(true);
+    const [link,setLink] = useState("");
+    const {id} =props;
     const [task, setTask] = useState({
         taskName:'',
         taskDescription:'',
@@ -22,7 +25,7 @@ const SingleProject = props => {
             ...task,
             [e.target.name]:e.target.value
         })
-    }
+    };
     const addTaskHandler = e => {
         e.preventDefault();
         setTaskList([...taskList,task]);
@@ -35,32 +38,51 @@ const SingleProject = props => {
             taskPerson:'',
             isComplete: false,
         })
-    }
+    };
     const taskCompletedHandler = e => {
         e.preventDefault();
         // data base delete from task list, post to completed list
+    };
+    const linkHandler = e => {
+        setToggle(!toggle);
+    }
+    const inputToggleHandler = e => {
+        setInputToggle(!inputToggle);
     }
     return (
-        <div>
-            <div className="projectListContainer">
-                <div className="projectTitle">
-                    <ul className="TitleItem">
-                        <li>Project {id}</li>
-                        <li>
-                            <h1>Tasks</h1>
-                            <h1>{taskList.length}/{taskList.length}</h1>
-                        </li>
-                    </ul>
-
-                </div>
-                <div className="projectStatus">
-
-                </div>
-                <div className="projectTaskList">
-
-                </div>
-
-            </div>
+        <div className="singleProjContainer">
+            <table className="taskListTable">
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>{completedList.length}/{taskList.length}</th>
+                        <th>X quests</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Github Link</th>
+                        <th>
+                            {inputToggle ? link
+                            : <form>
+                                <input type="text"/>
+                                
+                            </form>
+                            }
+                            <span>
+                                <button onClick={linkHandler} className="gitLinkBtn">{link ? "Edit Link" : "Add Link"}</button>
+                            </span>
+                        </th>
+                    </tr>
+                    {testList.map((testItem,idx) => {
+                        return(<tr>
+                            <td>{idx}</td>
+                            <td>{idx}</td>
+                        </tr>)
+                    })}
+                    
+                </tbody>
+            </table>
         </div>
     )
 }
