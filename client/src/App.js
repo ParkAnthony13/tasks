@@ -7,7 +7,7 @@ import LandingPage from './components/LandingPage';
 import NavBar from './components/NavBar';
 import ProjectList from './components/ProjectList';
 import SingleProject from './components/SingleProject';
-
+import LogReg from './components/LogReg';
 
 import './App.css';
 
@@ -48,6 +48,8 @@ function App() {
         <SingleProject path="/project/:id"
           mobile={mobile} 
           setMobile={setMobile}/>
+        <LogReg path="/loginRegister"
+        />
       </Router>
     </div>
   );

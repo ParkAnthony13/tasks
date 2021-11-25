@@ -9,10 +9,13 @@
     max-height: 86px;
 }
 
-#swordlogo {
-    position: relative;
-    left: -30px;
-    top: 5px;
+.swordLogo {
+    height: 50px;
+    width: 100px;
+    background: url("../img/swordlogo2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .navBarRight {

@@ -32,7 +32,7 @@ const NavBar = props => {
         <div className="webContainer">
             <div className="navBar">
                 <div className="navBarLeft">
-                    <img id="swordlogo" src="./imgs/swordlogo2.png" alt="swordlogo" height="45px" style={{marginTop:"15px"}}/>
+                    <div className="swordLogo"></div>
                 </div>
                 {mobile
                 ? <div>
@@ -42,6 +42,7 @@ const NavBar = props => {
                     <Link to="/" className="navBarRightItems">Home</Link>
                     <Link to="/project" className="navBarRightItems">Projects</Link>
                     <Link to="/contact" className="navBarRightItems">Contact</Link>
+                    <Link to="/loginRegister" className="navBarRightItems">Sign in</Link>
                 </div>
                 }
             </div>
@@ -56,6 +57,9 @@ const NavBar = props => {
                 <hr />
                 <Link to="/contact" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
                     <p className="NavMobBtn">Contact</p>
+                </Link>
+                <Link to="/loginRegister" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
+                    <p className="NavMobBtn">Sign in</p>
                 </Link>
             </div>
         </div>
