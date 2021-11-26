@@ -7,12 +7,14 @@ const LogReg = props => {
 
     const [logName, setLogName] = useState('');
     const [logPass,setLogPass] = useState('');
-    
+
     const [newName,setNewName] = useState('');
     const [newPass,setNewPass] = useState('');
     const [newConfPass,setNewConfPass] = useState('');
     const [firstName,setFirstName] = useState('');
     const [lastName,setLastName] = useState('');
+
+    const {mobile,setMobile} = props;
 
     const changeHandler = e => {
         
@@ -20,8 +22,9 @@ const LogReg = props => {
 
 
     return (
-        <div className="logRegContainer">
+        <div className={mobile?"mobileLogRegContainer":"logRegContainer"}>
             <div className="logRegLeft logRegCol">
+                <h1>Login</h1>
                 <form className="logForm">
                     <div className="logregForm">
                         <label>User Name</label>
@@ -34,6 +37,7 @@ const LogReg = props => {
                 </form>
             </div>
             <div className="logRegRight logRegCol">
+                <h1>Register</h1>
                 <form className="logForm">
                     <div className="logregForm">
                         <label>Set User Name</label>

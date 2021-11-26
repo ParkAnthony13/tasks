@@ -49,6 +49,8 @@ function App() {
           mobile={mobile} 
           setMobile={setMobile}/>
         <LogReg path="/loginRegister"
+          mobile={mobile} 
+          setMobile={setMobile}
         />
       </Router>
     </div>
