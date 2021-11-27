@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {navigate, Router, Link} from '@reach/router'
 import '../css/ProjectList.css';
+import axios from 'axios';
 
 const ProjectList = props => {
 
@@ -15,9 +16,19 @@ const ProjectList = props => {
             setMobile(false);
         }
     }
+    const deleteProject = (name) => {
+        axios.delete(`http://localhost:3001/api/test/delete/${name}`)
+    }
 
+    const [movieList,setMovieList] = useState([]);
     // window.addEventListener('resize',showButton);
-
+    useEffect( () => {
+        axios.get('http://localhost:3001/api/test')
+            .then((response) => {
+                console.log(response);
+                setMovieList(response.data);
+            })
+    },[])
 
     return (
         <div className="projectListContainer">
@@ -77,6 +88,20 @@ const ProjectList = props => {
                         <p>short description of the project</p>
                     </div>
                 </Link>
+                {movieList.map((movie,idx) => {
+                    return(
+                    <div key={idx}>
+                        <Link to={`/project/${movie.id}/${idx}`} className="ProjectCard">
+                            <h2 className="PCardItem PCHead">{`${movie.movieName}`}</h2>
+                            <div className="PCardItem PCImg"></div>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>{`${movie.movieReview}`}</p>
+                            </div>
+                        </Link>
+                        <button onClick={() => deleteProject(movie.movieName)}>Delete</button>
+                    </div>)
+                })}
             </div>
         </div>
     )

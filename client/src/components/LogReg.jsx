@@ -2,8 +2,12 @@
 import React, { useState } from 'react';
 import {Link} from '@reach/router'
 import '../css/LogReg.css';
+import axios from 'axios';
 
 const LogReg = props => {
+
+    const [movieName, setMovieName] = useState('');
+    const [review, setReview] = useState('');
 
     const [logName, setLogName] = useState('');
     const [logPass,setLogPass] = useState('');
@@ -19,6 +23,18 @@ const LogReg = props => {
     const changeHandler = e => {
         
     }
+    const logInHandler = e => {
+        console.log("log-in")
+        e.preventDefault();
+        axios.post("http://localhost:3001/api/test/insert", {
+            movieName:movieName,
+            movieReview: review
+        }).then(() => {
+            alert("successful insert");
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
 
 
     return (
@@ -28,12 +44,19 @@ const LogReg = props => {
                 <form className="logForm">
                     <div className="logregForm">
                         <label>User Name</label>
-                        <input type="text" onChange={(e) => {setLogName(e.target.value)}}/>
+                        <input type="text" onChange={(e) => {
+                            setLogName(e.target.value)
+                            setMovieName(e.target.value)
+                        }}/>
                     </div>
                     <div className="logregForm">
                         <label>Password</label>
-                        <input type="text" onChange={(e) => {setLogPass(e.target.value)}}/>
+                        <input type="text" onChange={(e) => {
+                            setLogPass(e.target.value)
+                            setReview(e.target.value)
+                        }}/>
                     </div>
+                    <button onClick={logInHandler}>Log In</button>
                 </form>
             </div>
             <div className="logRegRight logRegCol">
