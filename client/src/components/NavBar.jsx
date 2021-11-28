@@ -43,6 +43,7 @@ const NavBar = props => {
                     <Link to="/project" className="navBarRightItems">Projects</Link>
                     <Link to="/contact" className="navBarRightItems">Contact</Link>
                     <Link to="/loginRegister" className="navBarRightItems">Sign in</Link>
+                    <Link to="/MyAccount" className="navBarRightItems">My Account</Link>
                 </div>
                 }
             </div>
@@ -60,6 +61,9 @@ const NavBar = props => {
                 </Link>
                 <Link to="/loginRegister" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
                     <p className="NavMobBtn">Sign in</p>
+                </Link>
+                <Link to="/MyAccount" onClick={mobileMenuLink} className="NavMobOuterBtn BtnLeftRight">
+                    <p className="NavMobBtn">My Account</p>
                 </Link>
             </div>
         </div>

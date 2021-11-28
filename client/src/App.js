@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import ProjectList from './components/ProjectList';
 import SingleProject from './components/SingleProject';
 import LogReg from './components/LogReg';
+import AccountPage from './components/Account';
 
 import './App.css';
 
@@ -50,6 +51,10 @@ function App() {
           setMobile={setMobile}/>
         <LogReg path="/loginRegister"
           mobile={mobile} 
+          setMobile={setMobile}
+        />
+        <AccountPage path="/MyAccount"
+          mobile={mobile}
           setMobile={setMobile}
         />
       </Router>

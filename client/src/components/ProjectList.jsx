@@ -71,23 +71,6 @@ const ProjectList = props => {
                     </div>
                 </Link>
 
-                <Link to="/project/5" className="ProjectCard">
-                    <h2 className="PCardItem PCHead">Project Name</h2>
-                    <div className="PCardItem PCImg"></div>
-                    <div className="PCardItem">
-                        <p>Description</p>
-                        <p>short description of the project</p>
-                    </div>
-                </Link>
-
-                <Link to="/project/6" className="ProjectCard">
-                    <h2 className="PCardItem PCHead">Project Name</h2>
-                    <div className="PCardItem PCImg"></div>
-                    <div className="PCardItem">
-                        <p>Description</p>
-                        <p>short description of the project</p>
-                    </div>
-                </Link>
                 {movieList.map((movie,idx) => {
                     return(
                     <div key={idx}>

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import {Link} from '@reach/router'
+import {Link,navigate} from '@reach/router'
 import '../css/LogReg.css';
 import axios from 'axios';
 
@@ -36,6 +36,21 @@ const LogReg = props => {
         })
     }
 
+    const regHandler = e => {
+        axios.post("http://localhost:3001/api/accounts", {
+            username:newName,
+            password:newPass,
+            firstName:firstName,
+            lastName:lastName
+        }).then(() => {
+            console.log("registered!")
+            navigate('/')
+        }).catch((error) => {
+            console.log("failed Reg")
+            console.log(error)
+        })
+    }
+
 
     return (
         <div className={mobile?"mobileLogRegContainer":"logRegContainer"}>
@@ -46,14 +61,12 @@ const LogReg = props => {
                         <label>User Name</label>
                         <input type="text" onChange={(e) => {
                             setLogName(e.target.value)
-                            setMovieName(e.target.value)
                         }}/>
                     </div>
                     <div className="logregForm">
                         <label>Password</label>
                         <input type="text" onChange={(e) => {
                             setLogPass(e.target.value)
-                            setReview(e.target.value)
                         }}/>
                     </div>
                     <button onClick={logInHandler}>Log In</button>
@@ -82,6 +95,7 @@ const LogReg = props => {
                         <label>Last Name</label>
                         <input type="text" onChange={(e) => {setLastName(e.target.value)}}/>
                     </div>
+                    <button onClick={regHandler}>Sign Up</button>
                 </form>
             </div>
         </div>

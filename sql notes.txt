@@ -1,0 +1,39 @@
+----------------------------
+----------------------------
+Users
+----------------------------
+email
+password
+firstName
+lastName
+project_id --> many to many --> users to projects
+createdAt
+updatedAt
+----------------------------
+----------------------------
+----------------------------
+Projects
+----------------------------
+projectName
+description
+imgUrl
+originalDueDate
+dueDate
+isLate
+user_id --> many to many --> projects to users
+createdAt
+updatedAt
+----------------------------
+----------------------------
+----------------------------
+Tasks
+----------------------------
+taskName
+description
+user_id --> one task --> many users
+originalDueDate
+dueDate
+isLate
+createdAt
+updatedAt
+  
