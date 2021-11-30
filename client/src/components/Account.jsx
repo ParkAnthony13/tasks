@@ -9,8 +9,14 @@ const AccountPage = props => {
     const [userList, setUserList] = useState([]);
 
 
-    const deleteHandler = (e,userId) => {
-        axios.delete(`http://localhost:3001/api/accounts/${userId}`)
+    const deleteHandler = (userId) => {
+        axios.delete(`http://localhost:3001/api/accounts/delete/${userId}`)
+            .then((response) => {
+                console.log("deletd account")
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     useEffect(() => {
@@ -35,7 +41,7 @@ const AccountPage = props => {
                         <p>{user.firstName} {user.lastName}</p>
                         <button onClick={() => {
                             deleteHandler(user.id)
-                        }}>Delete</button>
+                        }}>Delete {user.id}</button>
                     </div>
                 )
             })}
