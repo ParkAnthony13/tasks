@@ -1,13 +1,13 @@
 import react, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {navigate} from '@reach/router'
+import '../css/Account.css';
 
 const AccountPage = props => {
 
 
 
     const [userList, setUserList] = useState([]);
-
 
     const deleteHandler = (userId) => {
         axios.delete(`http://localhost:3001/api/accounts/delete/${userId}`)
@@ -17,6 +17,9 @@ const AccountPage = props => {
             .catch((error) => {
                 console.log(error)
             })
+    } 
+    const updateHandler = (userId) => {
+        navigate(`/MyAccount/Edit/${userId}`)
     }
 
     useEffect(() => {
@@ -31,17 +34,20 @@ const AccountPage = props => {
     },[])
 
     return(
-        <div>
+        <div className="AccountContainer">
             {userList.map((user,idx) => {
                 return(
                     <div key={idx}>
-                        <p>{user.id}</p>
-                        <p>{user.username}</p>
-                        <p>{user.password}</p>
-                        <p>{user.firstName} {user.lastName}</p>
+                        <p>User ID: {user.id}</p>
+                        <p>UserName: {user.username}</p>
+                        <p>Password: {user.password}</p>
+                        <p>User Name: {user.firstName}, {user.lastName}</p>
                         <button onClick={() => {
                             deleteHandler(user.id)
                         }}>Delete {user.id}</button>
+                        <button onClick={() => {
+                            updateHandler(user.id)
+                        }}>Update {user.id}</button>
                     </div>
                 )
             })}

@@ -9,6 +9,7 @@ import ProjectList from './components/ProjectList';
 import SingleProject from './components/SingleProject';
 import LogReg from './components/LogReg';
 import AccountPage from './components/Account';
+import UpdateAccount from './components/UpdateAccount';
 
 import './App.css';
 
@@ -57,6 +58,7 @@ function App() {
           mobile={mobile}
           setMobile={setMobile}
         />
+        <UpdateAccount path="/MyAccount/Edit/:id" />
       </Router>
     </div>
   );

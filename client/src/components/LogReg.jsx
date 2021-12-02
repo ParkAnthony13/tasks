@@ -11,6 +11,7 @@ const LogReg = props => {
 
     const [logName, setLogName] = useState('');
     const [logPass,setLogPass] = useState('');
+    const [logError,setLogError] = useState({})
 
     const [newName,setNewName] = useState('');
     const [newPass,setNewPass] = useState('');
@@ -24,15 +25,16 @@ const LogReg = props => {
         
     }
     const logInHandler = e => {
-        console.log("log-in")
         e.preventDefault();
-        axios.post("http://localhost:3001/api/test/insert", {
-            movieName:movieName,
-            movieReview: review
-        }).then(() => {
-            alert("successful insert");
+        axios.get("http://localhost:3001/api/login", {
+            logName:logName,
+            logPass:logPass
+        }).then((response) => {
+            console.log(response)
+            setLogError(response)
         }).catch((error) => {
             console.log(error)
+            setLogError(error)
         })
     }
 

@@ -1,0 +1,9 @@
+.AccountContainer {
+    outline: 1px solid red;
+    margin:auto;
+    color:#f5c462;
+    display: flex;
+    justify-content: space-around;
+    padding: auto;
+    width: 35ch;
+}

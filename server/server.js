@@ -20,6 +20,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const mysql = require("mysql");
+const bcrypt = require("bcrypt")
+const saltRounds = 10
 
 
 const db = mysql.createPool({
@@ -67,7 +69,7 @@ app.put('/api/test/update/:movieName',(req,res) => {
     })
 })
 
-// log in reg //////////////////////////////////////////////////////////////
+// Register Login Start //////////////////////////////////////////////////////
 app.get("/api/accounts",(req,res) => {
     const sqlSelect = "SELECT * FROM users;";
     db.query(sqlSelect, (err,result) => {
@@ -75,7 +77,90 @@ app.get("/api/accounts",(req,res) => {
     })
 })
 
+app.get(`/api/accounts/:id`,(req,res) => {
+    const userId = req.params.id
+    const sqlSelect = "SELECT * FROM users WHERE id=?"
+
+    db.query(sqlSelect, userId, (err,result) => {
+        res.send(result);
+    })
+})
+
 app.post('/api/accounts', (req,res) => {
+    const username = req.body.username
+    const password = req.body.password
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+
+    bcrypt.hash(password,saltRounds,(err,hash) => {
+        if(err) {
+            console.log(err)
+        }
+        const sqlInsert = "INSERT INTO users (username, password, firstName, lastName, createdAt, updatedAt) VALUES (?,?,?,?,NOW(),NOW());"
+        db.query(sqlInsert, [username,hash,firstName,lastName], (err,result) => {
+            console.log(err);
+        })
+    })
+})
+
+app.get("/api/login",(req,res) => {
+    const username = req.body.logName;
+    const password = req.body.logPass;
+
+    db.query("SELECT * FROM users WHERE username=? AND password=?",
+    [username,password],
+    (err,result) => {
+        if (err) {
+            res.send({ err: err});
+        }
+        if (result.length > 0) {
+            res.send(result);
+        } else {
+            res.send({message:"Incorrect username/password"})
+        }
+    })
+})
+
+app.delete('/api/accounts/delete/:id',(req,res) => {
+    const userId = req.params.id
+    const sqlDelete = "DELETE FROM users WHERE id = ?"
+    db.query(sqlDelete, userId, (err,result) => {
+        if(err) console.log(err);
+    })
+})
+
+app.put('/api/accounts', (req,res) => {
+    const password = req.body.password
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    const userId = req.body.userId
+
+    const sqlUpdate = "UPDATE users SET firstName=?,lastName=?,password=?,updatedAt=NOW() WHERE id=?"
+
+    db.query(sqlUpdate,[firstName,lastName,password,userId],(err,result) => {
+        if (err) console.log(err);
+    });
+})
+// Register Login END //////////////////////////////////////////////////////
+
+// Projects Start //////////////////////////////////////////////////////////
+app.get("/api/projects",(req,res) => {
+    const sqlSelect = "SELECT * FROM projects;";
+    db.query(sqlSelect, (err,result) => {
+        res.send(result);
+    })
+})
+
+app.get(`/api/projects/:id`,(req,res) => {
+    const projectId = req.params.id
+    const sqlSelect = "SELECT * FROM projects WHERE id=?"
+
+    db.query(sqlSelect, projectId, (err,result) => {
+        res.send(result);
+    })
+})
+
+app.post('/api/projects', (req,res) => {
     const username = req.body.username
     const password = req.body.password
     const firstName = req.body.firstName
@@ -87,17 +172,30 @@ app.post('/api/accounts', (req,res) => {
     })
 })
 
-app.delete('/api/accounts/delete/:id',(req,res) => {
+app.delete('/api/projects/delete/:id',(req,res) => {
     const userId = req.params.id
     const sqlDelete = "DELETE FROM users WHERE id = ?"
     db.query(sqlDelete, userId, (err,result) => {
         if(err) console.log(err);
     })
 })
-// log in reg //////////////////////////////////////////////////////////////
+
+app.put('/api/projects', (req,res) => {
+    const password = req.body.password
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    const userId = req.body.userId
+
+    const sqlUpdate = "UPDATE users SET firstName=?,lastName=?,password=?,updatedAt=NOW() WHERE id=?"
+
+    db.query(sqlUpdate,[firstName,lastName,password,userId],(err,result) => {
+        if (err) console.log(err);
+    });
+})
 
 
 
+// Projects END //////////////////////////////////////////////////////////
 app.listen(3001, () => {
     console.log("Running on port 3001");
 });
