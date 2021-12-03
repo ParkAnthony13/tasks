@@ -23,7 +23,7 @@ const ProjectList = props => {
     const [movieList,setMovieList] = useState([]);
     // window.addEventListener('resize',showButton);
     useEffect( () => {
-        axios.get('http://localhost:3001/api/test')
+        axios.get('http://localhost:3001/api/projects')
             .then((response) => {
                 console.log(response);
                 setMovieList(response.data);

@@ -7,7 +7,10 @@ const SingleProject = props => {
     const [toggle,setToggle] = useState(true);
     const [inputToggle,setInputToggle] = useState(true);
     const [link,setLink] = useState("");
+
     const {id} =props;
+    const {mobile,setMobile} = props;
+
     const [task, setTask] = useState({
         taskName:'',
         taskDescription:'',
@@ -19,6 +22,36 @@ const SingleProject = props => {
     });
     const [taskList, setTaskList] = useState([]);
     const [completedList, setCompletedList] = useState([]);
+
+    const testTList = [
+        {
+            taskName:'',
+            taskDescription:'',
+            taskCreatedAt:'',
+            taskDueDate:'',
+            taskDateDelta:'',
+            taskPerson:'',
+            isComplete: false,
+        },
+        {
+            taskName:'',
+            taskDescription:'',
+            taskCreatedAt:'',
+            taskDueDate:'',
+            taskDateDelta:'',
+            taskPerson:'',
+            isComplete: false,
+        },
+        {
+            taskName:'',
+            taskDescription:'',
+            taskCreatedAt:'',
+            taskDueDate:'',
+            taskDateDelta:'',
+            taskPerson:'',
+            isComplete: false,
+        }
+    ]
 
     const changeHandler = e => {
         setTask({
@@ -75,12 +108,12 @@ const SingleProject = props => {
                         </th>
                     </tr>
                     {testList.map((testItem,idx) => {
-                        return(<tr>
+                        return(<tr key={idx}>
                             <td>{idx}</td>
                             <td>{idx}</td>
                         </tr>)
                     })}
-                    
+
                 </tbody>
             </table>
         </div>

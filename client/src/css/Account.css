@@ -1,9 +1,13 @@
 .AccountContainer {
-    outline: 1px solid red;
     margin:auto;
     color:#f5c462;
     display: flex;
     justify-content: space-around;
     padding: auto;
-    width: 35ch;
+    width: 90ch;
+    flex-direction: column;
+}
+
+.AccountContainer div {
+    border-bottom: 2px solid #f5c462;
 }

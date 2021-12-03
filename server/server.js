@@ -97,29 +97,65 @@ app.post('/api/accounts', (req,res) => {
             console.log(err)
         }
         const sqlInsert = "INSERT INTO users (username, password, firstName, lastName, createdAt, updatedAt) VALUES (?,?,?,?,NOW(),NOW());"
-        db.query(sqlInsert, [username,hash,firstName,lastName], (err,result) => {
-            console.log(err);
+        db.query(sqlInsert, [username,hash,firstName,lastName],
+            (err,result) => {
+                console.log(err);
         })
     })
 })
 
-app.get("/api/login",(req,res) => {
+// app.get("/api/login",(req,res) => {
+//     if (req.session.user) {
+//         res.send({ loggedIn: true, user: req.session.user });
+//     } else {
+//         res.send({ loggedIn: false });
+//     }
+// })
+
+app.post("/api/login",(req,res) => {
     const username = req.body.logName;
     const password = req.body.logPass;
 
-    db.query("SELECT * FROM users WHERE username=? AND password=?",
-    [username,password],
-    (err,result) => {
-        if (err) {
-            res.send({ err: err});
+    db.query(
+        "SELECT * FROM users WHERE username = ?;", username,
+        (err,result) => {
+            if (err) {
+                res.send({ err:err })
+            }
+
+            if (result.length > 0) {
+                bcrypt.compare(password, result[0].password, (err,response) => {
+                    if (response) {
+                        res.send(result)
+                    } else {
+                        res.send({ message: "Incorrect username/password"})
+                    }
+                })
+            } else {
+                res.send({ message: "Username does not exist"})
+            }
         }
-        if (result.length > 0) {
-            res.send(result);
-        } else {
-            res.send({message:"Incorrect username/password"})
-        }
-    })
+    )
 })
+
+// app.post("/api/login",(req,res) => {
+//     const username = req.body.logName;
+//     const password = req.body.logPass;
+
+//     db.query("SELECT * FROM users WHERE username=? AND password=?",
+//     [username,password],
+//     (err,result) => {
+//         if (err) {
+//             res.send({ err: err});
+//         }
+
+//         if (result.length > 0) {
+//             res.send(result);
+//         } else {
+//             res.send({message:"Incorrect username/password"})
+//         }
+//     })
+// })
 
 app.delete('/api/accounts/delete/:id',(req,res) => {
     const userId = req.params.id
@@ -137,10 +173,29 @@ app.put('/api/accounts', (req,res) => {
 
     const sqlUpdate = "UPDATE users SET firstName=?,lastName=?,password=?,updatedAt=NOW() WHERE id=?"
 
-    db.query(sqlUpdate,[firstName,lastName,password,userId],(err,result) => {
-        if (err) console.log(err);
+    bcrypt.hash(password,saltRounds,(err,hash) => {
+        if(err) {
+            console.log(err)
+        }
+        
+        db.query(sqlUpdate, [firstName,lastName,hash,userId],
+            (err,result) => {
+                console.log(err);
+        })
     });
 })
+// app.put('/api/accounts', (req,res) => {
+//     const password = req.body.password
+//     const firstName = req.body.firstName
+//     const lastName = req.body.lastName
+//     const userId = req.body.userId
+
+//     const sqlUpdate = "UPDATE users SET firstName=?,lastName=?,password=?,updatedAt=NOW() WHERE id=?"
+
+//     db.query(sqlUpdate,[firstName,lastName,password,userId],(err,result) => {
+//         if (err) console.log(err);
+//     });
+// })
 // Register Login END //////////////////////////////////////////////////////
 
 // Projects Start //////////////////////////////////////////////////////////

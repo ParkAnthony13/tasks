@@ -17,7 +17,7 @@ const AccountPage = props => {
             .catch((error) => {
                 console.log(error)
             })
-    } 
+    }
     const updateHandler = (userId) => {
         navigate(`/MyAccount/Edit/${userId}`)
     }

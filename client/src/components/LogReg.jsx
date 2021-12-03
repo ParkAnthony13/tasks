@@ -19,22 +19,25 @@ const LogReg = props => {
     const [firstName,setFirstName] = useState('');
     const [lastName,setLastName] = useState('');
 
+    const [loginStatus,setLoginStatus] = useState("");
+
     const {mobile,setMobile} = props;
 
-    const changeHandler = e => {
-        
-    }
     const logInHandler = e => {
-        e.preventDefault();
-        axios.get("http://localhost:3001/api/login", {
+        e.preventDefault()
+        axios.post("http://localhost:3001/api/login", {
             logName:logName,
             logPass:logPass
         }).then((response) => {
-            console.log(response)
-            setLogError(response)
-        }).catch((error) => {
-            console.log(error)
-            setLogError(error)
+            if (!response.data.message) {
+                setLoginStatus(response.data[0].username);
+                console.log(response.data[0].username) // success?
+                console.log("success")
+            } else {
+                console.log(response.data);
+                setLoginStatus(response.data.message) // incorrect message?
+                console.log("incorrect")
+            }
         })
     }
 
@@ -73,6 +76,7 @@ const LogReg = props => {
                     </div>
                     <button onClick={logInHandler}>Log In</button>
                 </form>
+                <div>{loginStatus}</div>
             </div>
             <div className="logRegRight logRegCol">
                 <h1>Register</h1>
