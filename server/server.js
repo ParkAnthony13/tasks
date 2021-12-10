@@ -1,26 +1,15 @@
-
-// const express = require("express")
-// const cors = require("cors")
-// const app = express()
-// const port = 8000
-
-// app.use(cors())
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: true }))
-
-// require("./config/mongoose.config")
-
-// const taskRoutes = require('./routes/task.routes') // name isn't used anywhere else
-// taskRoutes(app)
-
-// app.listen(port, () => console.log(`EXPRESS LISTENING ON ${port}`))
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const mysql = require("mysql");
-const bcrypt = require("bcrypt")
+
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+
+
+const bcrypt = require("bcrypt");
+const e = require("express");
 const saltRounds = 10
 
 
@@ -31,9 +20,24 @@ const db = mysql.createPool({
     database:'tasks_schema'
 });
 
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET","POST"],
+    credentials: true
+}));
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+    key: "userId",
+    secret: "speak friend and enter",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 60 * 60 * 24,
+    },
+}))
 
 app.get("/api/test",(req,res) => {
     const sqlSelect = "SELECT * FROM movie_reviews;";
@@ -104,13 +108,13 @@ app.post('/api/accounts', (req,res) => {
     })
 })
 
-// app.get("/api/login",(req,res) => {
-//     if (req.session.user) {
-//         res.send({ loggedIn: true, user: req.session.user });
-//     } else {
-//         res.send({ loggedIn: false });
-//     }
-// })
+app.get("/api/login", (req,res) => {
+    if (req.session.user) {
+        res.send({ loggedIn: true, user: req.session.user })
+    } else {
+        res.send({ loggedIn: false })
+    }
+})
 
 app.post("/api/login",(req,res) => {
     const username = req.body.logName;
@@ -126,6 +130,8 @@ app.post("/api/login",(req,res) => {
             if (result.length > 0) {
                 bcrypt.compare(password, result[0].password, (err,response) => {
                     if (response) {
+                        req.session.user = result;
+                        console.log(req.session.user);
                         res.send(result)
                     } else {
                         res.send({ message: "Incorrect username/password"})
@@ -137,25 +143,6 @@ app.post("/api/login",(req,res) => {
         }
     )
 })
-
-// app.post("/api/login",(req,res) => {
-//     const username = req.body.logName;
-//     const password = req.body.logPass;
-
-//     db.query("SELECT * FROM users WHERE username=? AND password=?",
-//     [username,password],
-//     (err,result) => {
-//         if (err) {
-//             res.send({ err: err});
-//         }
-
-//         if (result.length > 0) {
-//             res.send(result);
-//         } else {
-//             res.send({message:"Incorrect username/password"})
-//         }
-//     })
-// })
 
 app.delete('/api/accounts/delete/:id',(req,res) => {
     const userId = req.params.id
@@ -184,18 +171,7 @@ app.put('/api/accounts', (req,res) => {
         })
     });
 })
-// app.put('/api/accounts', (req,res) => {
-//     const password = req.body.password
-//     const firstName = req.body.firstName
-//     const lastName = req.body.lastName
-//     const userId = req.body.userId
 
-//     const sqlUpdate = "UPDATE users SET firstName=?,lastName=?,password=?,updatedAt=NOW() WHERE id=?"
-
-//     db.query(sqlUpdate,[firstName,lastName,password,userId],(err,result) => {
-//         if (err) console.log(err);
-//     });
-// })
 // Register Login END //////////////////////////////////////////////////////
 
 // Projects Start //////////////////////////////////////////////////////////

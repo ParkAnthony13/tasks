@@ -1,7 +1,7 @@
-import react, { useState } from 'react';
+import react, { useEffect, useState } from 'react';
 import { Router } from '@reach/router';
 // import Button from '@mui/material/Button';
-// import axios from 'axios';
+import axios from 'axios';
 
 import LandingPage from './components/LandingPage';
 import NavBar from './components/NavBar';
@@ -16,6 +16,8 @@ import './App.css';
 document.body.style.backgroundColor = "#1f1f1f";
 
 function App() {
+
+  axios.defaults.withCredentials = true;
 
   const [mobile,setMobile] = useState(false);
   const [mobileMenu,setMobileMenu] = useState(false);

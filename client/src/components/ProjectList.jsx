@@ -35,14 +35,18 @@ const ProjectList = props => {
             <h1>Projects</h1>
             <hr style={{margin:'10px 0px'}}></hr>
             <div className="ProjectList">
-                <Link to="/project/1" className="ProjectCard">
-                    <h2 className="PCardItem PCHead">Project Name</h2>
-                    <div className="PCardItem PCImg"></div>
-                    <div className="PCardItem">
-                        <p>Description</p>
-                        <p>short description of the project</p>
+                <div>
+                    <Link to="/project/1" className="ProjectCard">
+                        <div className="PCardItem PCImg"></div>
+                    </Link>
+                    <div>
+                        <h2 className="PCardItem PCHead">Project Name</h2>
+                        <div className="PCardItem">
+                            <p>Description</p>
+                            <p>short description of the project</p>
+                        </div>
                     </div>
-                </Link>
+                </div>
 
                 <Link to="/project/2" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
