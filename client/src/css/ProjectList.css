@@ -9,6 +9,11 @@
 .projectListContainer h1:first-child {
     color: #f5c462;
 }
+.ProjectPageLine {
+    color: #f5c462;
+    background-color: #f5c462;
+    margin: 10px 0px;
+}
 
 .ProjectList {
     display: flex;

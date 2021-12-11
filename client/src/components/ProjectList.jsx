@@ -33,7 +33,7 @@ const ProjectList = props => {
     return (
         <div className="projectListContainer">
             <h1>Projects</h1>
-            <hr style={{margin:'10px 0px'}}></hr>
+            <hr className='ProjectPageLine'></hr>
             <main className="ProjectList">
                 <section>
                     <div className="Proj">
@@ -83,33 +83,69 @@ const ProjectList = props => {
                     <div className='HLine'></div>
                 </section>
 
-                <Link to="/project/2" className="ProjectCard">
-                    <h2 className="PCardItem PCHead">Project Name</h2>
-                    <div className="PCardItem PCImg"></div>
-                    <div className="PCardItem">
-                        <p>Description</p>
-                        <p>short description of the project</p>
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
+                        </div>
                     </div>
-                </Link>
+                    <div className='HLine'></div>
+                </section>
 
-                <Link to="/project/3" className="ProjectCard">
-                    <h2 className="PCardItem PCHead">Project Name</h2>
-                    <div className="PCardItem PCImg"></div>
-                    <div className="PCardItem">
-                        <p>Description</p>
-                        <p>short description of the project</p>
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
+                        </div>
                     </div>
-                </Link>
+                    <div className='HLine'></div>
+                </section>
 
-                <Link to="/project/4" className="ProjectCard">
-                    <h2 className="PCardItem PCHead">Project Name</h2>
-                    <div className="PCardItem PCImg"></div>
-                    <div className="PCardItem">
-                        <p>Description</p>
-                        <p>short description of the project</p>
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
+                        </div>
                     </div>
-                </Link>
+                    <div className='HLine'></div>
+                </section>
 
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='HLine'></div>
+                </section>
                 {movieList.map((movie,idx) => {
                     return(
                     <div key={idx}>
