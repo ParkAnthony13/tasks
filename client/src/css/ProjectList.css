@@ -14,7 +14,6 @@
     display: flex;
     margin: auto;
     justify-content: space-around;
-    padding: auto;
     flex-direction: column;
 }
 .ProjectCard {
@@ -71,4 +70,16 @@
     margin-bottom: 10px;
 }
 
+.Proj {
+    display: flex;
+    color: #f5c462;
+    margin-bottom: 1rem;
+}
 
+.HLine {
+    width: 80%;
+    height: 2px;
+    background: #f5c462;
+    margin: auto;
+    margin-bottom: 1rem;
+}

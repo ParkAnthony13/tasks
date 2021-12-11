@@ -34,19 +34,54 @@ const ProjectList = props => {
         <div className="projectListContainer">
             <h1>Projects</h1>
             <hr style={{margin:'10px 0px'}}></hr>
-            <div className="ProjectList">
-                <div>
-                    <Link to="/project/1" className="ProjectCard">
-                        <div className="PCardItem PCImg"></div>
-                    </Link>
-                    <div>
-                        <h2 className="PCardItem PCHead">Project Name</h2>
-                        <div className="PCardItem">
-                            <p>Description</p>
-                            <p>short description of the project</p>
+            <main className="ProjectList">
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div className='HLine'></div>
+                </section>
+
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='HLine'></div>
+                </section>
+
+                <section>
+                    <div className="Proj">
+                        <Link to="/project/1" className="">
+                            <div className="PCardItem PCImg"></div>
+                        </Link>
+                        <div>
+                            <h2 className="PCardItem PCHead">Project Name</h2>
+                            <div className="PCardItem">
+                                <p>Description</p>
+                                <p>short description of the project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='HLine'></div>
+                </section>
 
                 <Link to="/project/2" className="ProjectCard">
                     <h2 className="PCardItem PCHead">Project Name</h2>
@@ -89,7 +124,7 @@ const ProjectList = props => {
                         <button onClick={() => deleteProject(movie.movieName)}>Delete</button>
                     </div>)
                 })}
-            </div>
+            </main>
         </div>
     )
 }
