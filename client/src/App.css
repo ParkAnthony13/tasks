@@ -15,6 +15,10 @@
   line-height: 65px;
   background-color: #1f1f1f;
 }
+.AppContainer main {
+  width: 80vw;
+  margin: auto;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -54,4 +58,38 @@
   background-color: #1f1f1f;
   height: 50vh;
   width: 50vw;
+}
+
+
+
+
+
+
+
+
+.dflex {
+  display:flex;
+}
+.spacebetween {
+  justify-content: space-between;
+}
+.spaceeven {
+  justify-content: space-evenly;
+}
+.spacearound{
+  justify-content: space-around;
+}
+.justcenter {
+  justify-content: center;
+}
+.aligncenter {
+  align-items: center;
+}
+.flexcenter {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.flexcol {
+  flex-direction: column;
 }

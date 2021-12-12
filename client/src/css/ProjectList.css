@@ -21,39 +21,8 @@
     justify-content: space-around;
     flex-direction: column;
 }
-.ProjectCard {
-    background: #1f1f1f;
-    width: 320px;
-    margin: 0px 18px 18px;
-    text-decoration: none;
-    color: #fff;
-
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 0 auto;
-    
-    outline: 2px solid black;
-    border-radius: 25px;
-    box-shadow: 2px 2px 5px #696969;
-}
-.ProjectCardHover {
-    background: #ffffff;
-    width: 320px;
-    max-height: 400px;
-    margin: 0px 18px 18px;
-    text-decoration: none;
-    color: #1f1f1f;
-
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    
-    outline: 2px solid black;
-    border-radius: 25px;
-    box-shadow: 0px 3px 7px #ffffff;
+.ProjCardCol {
+    width: 70%;
 }
 .PCardItem {
     margin: auto;
@@ -82,7 +51,7 @@
 }
 
 .HLine {
-    width: 80%;
+    width: 90%;
     height: 2px;
     background: #f5c462;
     margin: auto;

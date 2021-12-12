@@ -1,0 +1,84 @@
+
+/* CSS slow transition from dark background to orange background */
+/* .ButtonM {
+    background: none;
+    color: #f5c462;
+
+    border: 2px solid #f5c462;
+    border-radius: .4em;
+
+    width: 150px;
+    height: 3rem;
+
+    margin: .3rem auto;
+    margin-left: 2em;
+    padding: 0;
+
+    font: inherit;
+    cursor: pointer;
+    
+    transition-duration: 500ms;
+    transition-property: background, color;
+    transition-timing-function: ease;
+}
+
+.ButtonM:hover {
+    background: #f5c462;
+    color: black;
+
+    border: 2px solid black;
+    border-radius: .4em;
+
+    width: 150px;
+    height: 3rem;
+    
+    margin: .3rem auto;
+    margin-left: 2em;
+    padding: 0;
+
+    font: inherit;
+    cursor: pointer;
+} */
+/* CSS slow transition END */
+
+/* Slow Fill color from left to right */
+.ButtonM {
+    color: #f5c462;
+
+    border: 2px solid #f5c462;
+    border-radius: .4em;
+
+    width: 150px;
+    height: 3rem;
+
+    margin: .3rem auto;
+    margin-left: 2em;
+    padding: 0;
+
+    font: inherit;
+    cursor: pointer;
+/* ------------------------------------- End bg color  , start bg color */
+    background: linear-gradient(to right, #f5c462 50%, #1f1f1f 50%);
+    background-size: 200% 100%;
+    background-position: bottom right;
+    transition: all .7s ease-out;
+}
+
+.ButtonM:hover {
+    background-position: bottom left;
+    color: #1f1f1f;
+    
+    border: 2px solid white;
+    border-radius: .4em;
+
+    width: 150px;
+    height: 3rem;
+    
+    margin: .3rem auto;
+    margin-left: 2em;
+    padding: 0;
+
+    font: inherit;
+    cursor: pointer;
+}
+/* Slow fill End */

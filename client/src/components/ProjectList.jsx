@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {navigate, Router, Link} from '@reach/router'
+import ButtonM from '../components/ButtonM';
 import '../css/ProjectList.css';
 import axios from 'axios';
 
@@ -32,7 +33,10 @@ const ProjectList = props => {
 
     return (
         <div className="projectListContainer">
-            <h1>Projects</h1>
+            <div className='dflex spacebetween'>
+                <h1>Projects</h1>
+                <ButtonM text='New Project' navTo="/"/>
+            </div>
             <hr className='ProjectPageLine'></hr>
             <main className="ProjectList">
                 <section>
@@ -40,11 +44,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
@@ -56,11 +66,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
@@ -72,11 +88,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
@@ -88,11 +110,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
@@ -104,11 +132,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
@@ -120,11 +154,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
@@ -136,11 +176,17 @@ const ProjectList = props => {
                         <Link to="/project/1" className="">
                             <div className="PCardItem PCImg"></div>
                         </Link>
-                        <div>
-                            <h2 className="PCardItem PCHead">Project Name</h2>
-                            <div className="PCardItem">
-                                <p>Description</p>
-                                <p>short description of the project</p>
+                        <div className='dflex spacebetween ProjCardCol'>
+                            <div >
+                                <h2 className="PCardItem PCHead">Project Name</h2>
+                                <div className="PCardItem">
+                                    <p>Description</p>
+                                    <p>short description of the project</p>
+                                </div>
+                            </div>
+                            <div>
+                                <ButtonM text='Edit' navTo='/'/>
+                                <ButtonM text='Delete' navTo='/'/>
                             </div>
                         </div>
                     </div>
