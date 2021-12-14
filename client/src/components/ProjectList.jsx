@@ -42,14 +42,14 @@ const ProjectList = props => {
                 <section>
                     <div className="Proj">
                         <Link to="/project/1" className="">
-                            <div className="PCardItem PCImg"></div>
+                            <div className="PCardItem PCImg projTasksImg"></div>
                         </Link>
                         <div className='dflex spacebetween ProjCardCol'>
                             <div >
                                 <h2 className="PCardItem PCHead">Project Name</h2>
                                 <div className="PCardItem">
                                     <p>Description</p>
-                                    <p>short description of the project</p>
+                                    <p>Task Manager project where users can create and manage tasks for multiple projects</p>
                                 </div>
                             </div>
                             <div>

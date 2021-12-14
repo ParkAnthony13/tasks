@@ -81,7 +81,7 @@ const LogReg = props => {
                             setLogPass(e.target.value)
                         }} />
                     </div>
-                    <button onClick={logInHandler}>Log In</button>
+                    <button id="logInButtonM" onClick={logInHandler}>Log In</button>
                 </form>
                 <div>{loginStatus}</div>
             </div>
@@ -108,7 +108,7 @@ const LogReg = props => {
                         <label>Last Name</label>
                         <input type="text" onChange={(e) => { setLastName(e.target.value) }} />
                     </div>
-                    <button onClick={regHandler}>Sign Up</button>
+                    <button id="signUpButtonM" onClick={regHandler}>Sign Up</button>
                 </form>
             </div>
         </div>

@@ -1,3 +1,15 @@
+/* .container {
+    background-color: black;
+    color: #1f1f1f;
+    height: 90.8vh;
+    background-image: url('../img/mapChart.jpg');
+    background-size: cover;
+    background-position: center 50%;
+    width: 100vw;
+    position: relative;
+    top: 0px;
+    left: -10vw;
+} */
 .container {
     background-color: black;
     color: #1f1f1f;
@@ -6,14 +18,19 @@
     background-size: cover;
     background-position: center 50%;
 }
+.landingMain {
+    background-color: #e4a935;
+    opacity: 100;
+}
 
 .imgText {
     padding: 20px;
-    font-size: 80px;
+    font-size: 60px;
     position: relative;
-    top: 50px;
+    top: 180px;
     left: 100px;
     max-width: fit-content;
+    text-shadow: -1px -1px 3px white;
 }
 .imgTextMobile {
     padding: 20px;

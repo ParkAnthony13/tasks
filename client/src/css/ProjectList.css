@@ -28,7 +28,7 @@
     margin: auto;
 }
 .PCHead {
-    max-width: 300px;
+    max-width: 55ch;
 }
 .PCImg {
     height: 200px;
@@ -38,10 +38,17 @@
 }
 .PCardItem p {
     text-align: start;
+    max-width: 55ch;
+}
+.PCardItem p:first-child {
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 .PCardItem p:nth-child(2) {
-    margin-top:-30px;
+    margin-top:-10px;
     margin-bottom: 10px;
+    max-width: 50ch;
+    line-height: 1.6;
 }
 
 .Proj {
@@ -56,4 +63,12 @@
     background: #f5c462;
     margin: auto;
     margin-bottom: 1rem;
+}
+
+.projTasksImg {
+    background-image: url('../img/projectTasksImg.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    z-index: 10;
 }
