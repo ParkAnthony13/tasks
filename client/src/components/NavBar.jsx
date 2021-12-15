@@ -1,5 +1,5 @@
 
-import React, {} from 'react';
+import react from 'react';
 import {Link} from '@reach/router'
 import '../css/NavBar.css';
 
@@ -10,7 +10,7 @@ const NavBar = props => {
     // const [mobileMenu,setMobileMenu] = useState(false);
 
     const showButton = () => {
-        if (window.innerWidth <= 850) {
+        if (window.innerWidth <= 1100) {
             setMobile(true);
         } else {
             setMobile(false);

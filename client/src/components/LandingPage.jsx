@@ -1,25 +1,10 @@
 
-import React from 'react';
+import react from 'react';
 import '../css/LandingPage.css';
 
 
 const LandingPage = props => {
-
     const {mobile,setMobile} = props;
-    // const [mobile,setMobile] = useState(false);
-    const handleClick = e => {
-        console.log(window.innerWidth);
-        console.log(mobile);
-    }
-
-    const showButton = () => {
-        if (window.innerWidth <= 1066) {
-            setMobile(true);
-        } else {
-            setMobile(false);
-        }
-    }
-    // window.addEventListener('resize',showButton);
 
     return (
         <main>

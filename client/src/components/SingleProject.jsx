@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import {navigate, Router, Link} from '@reach/router'
+import react, { useState } from 'react';
 import '../css/SingleProject.css';
 
 const SingleProject = props => {

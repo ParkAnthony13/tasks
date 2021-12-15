@@ -1,8 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
-import { Link, navigate } from '@reach/router'
+import react, { useState, useEffect } from 'react';
+import { navigate } from '@reach/router'
 import '../css/LogReg.css';
 import axios from 'axios';
+import GlobalState from '../contexts/GlobalState';
 
 const LogReg = props => {
 

@@ -1,4 +1,4 @@
-import react, {useEffect, useState} from 'react'
+import react, {useEffect, useState } from 'react'
 import axios from 'axios'
 import {navigate} from '@reach/router'
 import '../css/Account.css';
@@ -12,7 +12,8 @@ const AccountPage = props => {
     const deleteHandler = (userId) => {
         axios.delete(`http://localhost:3001/api/accounts/delete/${userId}`)
             .then((response) => {
-                console.log("deletd account")
+                console.log("deletd account");
+                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error)

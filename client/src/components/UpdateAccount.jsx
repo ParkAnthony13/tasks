@@ -1,4 +1,4 @@
-import react, {useEffect,useState} from 'react';
+import react, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {navigate} from '@reach/router';
 import '../css/UpdateAccount.css';
