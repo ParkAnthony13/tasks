@@ -46,23 +46,18 @@ function App() {
           />
           <Router>
             <LandingPage path="/" 
-              mobile={mobile} 
-              setMobile={setMobile}
+              mobile={mobile} setMobile={setMobile}
             />
             <ProjectList path="/project"
-              mobile={mobile} 
-              setMobile={setMobile}
+              mobile={mobile} setMobile={setMobile}
             />
             <SingleProject path="/project/:id"
-              mobile={mobile} 
-              setMobile={setMobile}/>
+              mobile={mobile} setMobile={setMobile}/>
             <LogReg path="/loginRegister"
-              mobile={mobile} 
-              setMobile={setMobile}
+              mobile={mobile} setMobile={setMobile}
             />
             <AccountPage path="/MyAccount"
-              mobile={mobile}
-              setMobile={setMobile}
+              mobile={mobile} setMobile={setMobile}
             />
             <UpdateAccount path="/MyAccount/Edit/:id" />
           </Router>
